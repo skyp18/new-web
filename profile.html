@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Shashank Kumar</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (prefersLight ? 'light' : 'dark'));
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
+  <body>
+    <a href="#profile" class="skip-link">Skip to main content</a>
+    <div id="particles-js"></div>
+
+    <header class="header">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <a href="1.html#home" class="navbar-brand">Shashank Kumar</a>
+        <div class="navbar-right">
+          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Toggle theme">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="navbar-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+        </div>
+        <ul class="navbar-menu" id="navbar-menu">
+          <li><a href="1.html#home">Home</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="profile">
+      <section class="profile-section">
+        <div class="section-title">
+          <h2>Profile</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="profile-content">
+          <div class="hero-photo">
+            <img src="profile.jpg" alt="Shashank Kumar - Profile photo" onerror="this.src='https://via.placeholder.com/220/1a1a1a/ffd700?text=Your+Photo'" />
+          </div>
+          <div class="profile-details">
+            <h1>Shashank Kumar</h1>
+            <p class="profile-tagline">Passionate developer | Java Programmer | AI/ML Enthusiast | Web Developer</p>
+            <div class="about-content">
+              <p>
+                I'm a Computer Science student passionate about building innovative
+                solutions using technology. With expertise in Java, Web Development,
+                and AI/ML, I love creating applications that solve real-world
+                problems.
+              </p>
+              <p>
+                My journey in tech has taught me the importance of clean code,
+                continuous learning, and collaboration. I'm always eager to take on
+                new challenges and expand my skill set.
+              </p>
+            </div>
+            <a href="contact.html" class="cta-button">Get In Touch</a>
+            <div class="section-link-wrap" style="margin-top: 1rem;">
+              <a href="1.html#home" class="section-link">Back to Home →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-icons">
+        <a href="mailto:kaiparker3567@gmail.com" title="Email" aria-label="Email" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-envelope"></i>
+        </a>
+        <a href="https://github.com/skyp18" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/shashank-kumar" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <div class="footer-content">
+        <p>&copy; 2026 Shashank Kumar. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon Footprint Calculator - Shashank Kumar</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+        document.documentElement.setAttribute("data-theme", saved || (prefersLight ? "light" : "dark"));
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
+  <body>
+    <script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+    <div id="particles-js"></div>
+
+    <header class="pro-detail-header">
+      <a href="1.html#projects" class="pro-detail-back" title="Back to portfolio" onclick="if(window.top!==window){window.top.closeProjectModal();return false;}">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      </a>
+      <button class="pro-detail-theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Toggle theme">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+
+    <section class="pro-detail-page">
+      <div class="pro-detail-card">
+        <h2>Carbon Footprint Calculator</h2>
+
+        <p>
+          A Carbon Footprint Calculator is a web-based tool that estimates the amount of carbon dioxide
+          (CO₂) emissions produced by daily activities such as electricity usage, transportation, and
+          food consumption. Users can input their habits and receive an estimate of their environmental
+          impact, along with suggestions to reduce it.
+        </p>
+
+        <h3>Technologies Used</h3>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Web Forms &amp; Validation</li>
+          <li>Calculation Logic / Formulas</li>
+          <li>Responsive Design</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li>Electricity usage emission estimates</li>
+          <li>Transportation (car, bus, flights) carbon tracking</li>
+          <li>Food consumption impact calculation</li>
+          <li>Personalized CO₂ footprint summary</li>
+          <li>Tips to reduce carbon footprint</li>
+        </ul>
+
+        <h3>My Contribution</h3>
+        <ul>
+          <li>Designed and built the web interface</li>
+          <li>Implemented emission calculation formulas</li>
+          <li>Integrated multiple activity categories</li>
+          <li>Created user-friendly input forms</li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+      function initParticles() {
+        const container = document.getElementById("particles-js");
+        if (!container) return;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReducedMotion) {
+          container.innerHTML = "";
+          return;
+        }
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+        const particleColor = isLight ? "#16a34a" : "#ffd700";
+        const count = window.innerWidth < 768 ? 18 : 28;
+        container.innerHTML = "";
+        particlesJS("particles-js", {
+          particles: {
+            number: { value: count, density: { enable: true, value_area: 900 } },
+            color: { value: particleColor },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: true },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 120, color: particleColor, opacity: 0.25, width: 1 },
+            move: { enable: true, speed: 1.2, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+            modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+          },
+          retina_detect: false
+        });
+      }
+      function toggleTheme() {
+        const html = document.documentElement;
+        const newTheme = html.getAttribute("data-theme") === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        initParticles();
+      }
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initParticles);
+      else initParticles();
+    </script>
+  </body>
+</html>
